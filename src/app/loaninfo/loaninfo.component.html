@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="addLoaninfoForm" class="col-6 offset-2 mt-3  card" style="padding: 20px;">
+    <form style="background-color: whitesmoke;" #addLoaninfoForm="ngForm" (ngSubmit)="getAddLoaninfoData(addLoaninfoForm)">
+      <br>
+      <div class="card body" style="padding: 20px;">
+        <h1 class="h1 text-center" style="background-color: #fff;">Make Loan</h1>
+        
+        <div class="form-group">
+          <label for="applicantName">Applicant name</label>
+          <input type="text" ngModel class="form-control" name="applicantName" id="applicantName" aria-describedby="emailHelpId"
+            placeholder="enter applicant name" #nameValid = "ngModel" required pattern =  "^[a-zA-Z\s]{2,30}$">         </div>
+        <div *ngIf = "nameValid.invalid && nameValid.touched"> 
+          <p class = "text-danger" *ngIf = "nameValid.errors.required">*this field is required</p>
+          <p class="text-danger" *ngIf = "nameValid.errors.pattern">*please enter a valid name & length should be 2-30 character</p>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" ngModel class="form-control" name="email" id="email" aria-describedby="emailHelpId"
+            placeholder="enter email">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1"  style="margin-right: 27%">Loan Type</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>House Loan</option>
+            <option>Personal Loan</option>
+            <option>Vehicle Loan</option>
+            <option>Business Loan</option>
+            <option>Study Loan</option>
+            <option>Car Loan</option>
+            <option>Laptop Loan</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="amount">Amount</label>
+          <input type="number" ngModel class="form-control" name="amount" id="amount"
+            aria-describedby="emailHelpId" placeholder="enter amount">
+        </div>
+        <div class="form-group">
+          <label for="interestRate">Interest Rate </label>
+          <input type="number" ngModel class="form-control" name="interestRate" id="interestRate" aria-describedby="emailHelpId"
+            placeholder="enter interest rate">
+        </div>
+        <div class="form-group">
+          <label for="period">Period</label>
+          <input type="number" ngModel class="form-control" name="period" id="period"
+            aria-describedby="emailHelpId" placeholder="enter period">
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" ngModel class="form-control" name="address" id="address"
+            aria-describedby="emailHelpId" placeholder="enter address" #nameValid = "ngModel" required pattern =  "^[a-zA-Z\s]{6,40}$">         </div>
+            <div *ngIf = "nameValid.invalid && nameValid.touched"> 
+              <p class = "text-danger" *ngIf = "nameValid.errors.required">*this field is required</p>
+              <p class="text-danger" *ngIf = "nameValid.errors.pattern">*please enter a valid address</p>
+            </div>
+        
+        <div class="form-group">
+          <label for="age">Age </label>
+          <input type="number" ngModel class="form-control" name="age" id="age" aria-describedby="emailHelpId"
+            placeholder="enter age">
+        </div>
+        <div class="form-group">
+          <label for="mobileNo">Mobile No.</label>
+          <input type="number" ngModel class="form-control" name="mobileNo" id="mobileNo"
+            aria-describedby="emailHelpId" placeholder="enter mobile nummber">
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender </label>
+          <input type="text" ngModel class="form-control" name="gender" id="gender"
+          aria-describedby="emailHelpId" placeholder="enter gender">
+        </div>
+        <div class="form-group">
+          <label for="occupation">Occupation </label>
+          <input type="text" ngModel class="form-control" name="occupation" id="occupation"
+          aria-describedby="emailHelpId" placeholder="enter occupation">
+        </div>
+        <div class="form-group">
+          <label for="salary">Salary </label>
+          <input type="number" ngModel class="form-control" name="salary" id="salary"
+          aria-describedby="emailHelpId" placeholder="enter salary">
+        </div>
+        <div class="form-group">
+          <label for="status">Status </label>
+          <input type="text" ngModel class="form-control" name="status" id="status"
+          aria-describedby="emailHelpId" placeholder="enter status">
+        </div>
+        <div class="form-group">
+          <label for="panNo">Pan No.</label>
+          <input type="text" ngModel class="form-control" name="panNo" id="panNo"
+            aria-describedby="emailHelpId" placeholder="enter pan number">
+        </div>
+        <div class="form-group">
+          <label for="bankId">Bank Id</label>
+          <input type="number" ngModel class="form-control" name="bankId" id="bankId"
+            aria-describedby="emailHelpId" placeholder="enter bank id">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="alert alert-success" *ngIf='message'>{{message}}</div>
+  <div id="addRegisterForm" class="col-6 offset-3 mt-3  card" style="padding: 20px;">
+    <form style="background-color: whitesmoke;" #addRegisterForm="ngForm" (ngSubmit)="register(addRegisterForm)">
+      <br>
+      <div class="card body" style="padding: 20px;">
+        <h1 class="h1 text-center" style="background-color: #fff;">Register</h1>
+        <div class="form-group">
+          <label for="fullName">Full name</label>
+          <input required ngModel name="fullName" type="text" ngModel class="form-control" name="fullName" id="fullName" aria-describedby="emailHelpId"
+            placeholder="enter full name"
+            minlength="4" id="fullName" #fullName="ngModel"  placeholder="Enter Full Name">
+         
+          
+            <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+              <div *ngIf="email.errors.required">This field is required</div>
+              <div *ngIf="email.errors.minlength">Please enter a valid name</div> 
+              <!-- <p *ngIf="email.errors.pattern">This is not a valid Email!!!</p> -->
+           </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input required  name="email" type="text" ngModel class="form-control" name="email" id="email" aria-describedby="emailHelpId"
+            placeholder="enter email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  minlength="3" id="email" #email="ngModel"  placeholder="Enter Email">
+         
+          
+            <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+              <div *ngIf="email.errors.required">This field is required</div>
+              <!-- <div *ngIf="email.errors.minlength">Email must be in xyz@gmail.com format</div> -->
+              <p *ngIf="email.errors.pattern">This is not a valid Email!!!</p>
+           </div>
+        </div>
+        <!-- <div class="form-group">
+          <label for="email" style="margin-right: 28%">Email</label>
+          <input required ngModel name="email" type="email" class="form-control self-form-control" 
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  minlength="3" id="email" #email="ngModel"  placeholder="Enter Email">
+         
+          
+          <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.minlength">Email must be in xyz@gmail.com format</div> -->
+            <!-- <p *ngIf="email.errors.pattern">This is not a valid Email!!!</p>
+         </div>
+        </div> -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input required ngModel name="password" type="text"  class="form-control" name="password" id="password" aria-describedby="emailHelpId"
+            placeholder="enter password"
+            minlength="6" id="password" #password="ngModel"  placeholder="Enter password">
+            <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+              <div *ngIf="email.errors.required">This field is required</div>
+              <div *ngIf="email.errors.minlength">Please enter a strong password</div> 
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="role">Role</label>
+          <input required ngModel name="role" type="text"  class="form-control" name="role" id="role" aria-describedby="emailHelpId"
+            placeholder="enter role"
+            minlength="4" id="email" #role="ngModel"  placeholder="Enter password">
+            <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+              <div *ngIf="email.errors.required">This field is required</div>
+            </div>
+        </div>
+        
+        
+       
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css'); */
+.style{
+    text-align: center;
+}
+.butn-style{
+    padding: 15px 113px;
+    font-size: 20px;
+    margin-bottom: 3%;
+}
+.form-control{
+    width: 36%!important;
+    display: inline-flex!important;
+}
+label{
+    display:block!important;
+}
+.style1{
+    text-align: left!important;
+}
+.alert-danger{
+    background-color: white!important;
+    border-color: white!important;
+}
+.alert{
+    padding:0!important;
+    margin-bottom: -1rem!important;
+}
+.borders{
+    border: 13px solid #dee2e6;
+    margin: 5% 19%;
+    box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }

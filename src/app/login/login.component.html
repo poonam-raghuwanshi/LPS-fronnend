@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="alert alert-danger" *ngIf='message'>{{message}}</div>
+  <div id="addLoginForm" class="col-6 offset-3 mt-3  card" style="padding: 20px;">
+    <form style="background-color: whitesmoke;" #addLoginForm="ngForm" (ngSubmit)="login(addLoginForm)">
+      <br>
+      <div class="card body" style="padding: 20px;">
+        <h1 class="h1 text-center" style="background-color: #fff;">Login</h1>
+        <div class="form-group">
+          <label for="userId">User Id</label>
+          <input type="number" #userId='ngModel' ngModel class="form-control" name="userId" id="userId"
+            aria-describedby="emailHelpId" placeholder="enter user id">
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input required ngModel #password='ngModel' name="password" type="password"  class="form-control" name="password" id="password" aria-describedby="emailHelpId"
+            placeholder="enter password"
+             id="password"   placeholder="Enter password">
+            <!-- <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+              <div *ngIf="email.errors.required">This field is required</div>
+              <div *ngIf="email.errors.minlength">Please enter a strong password</div> 
+            </div> -->
+        </div>
+
+         
+        
+        
+        
+       
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+

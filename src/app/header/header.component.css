@@ -1,0 +1,20 @@
+li{
+    display:inline;
+    color:white;
+    cursor: pointer;
+}
+li a{
+    color:white;
+    font-size:2px;
+    
+    
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    text-decoration: none;
+    background-color: black;
+    text-align: center;
+    
+  }

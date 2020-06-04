@@ -1,0 +1,69 @@
+<div class="col-md-8 offset-2 mt-5">
+  <input type="text"
+    class="form-control mb-3" placeholder="Search here..." [(ngModel)]="searchValue">
+
+  <div class="row">
+    <h3 class="col-md-2">Sort By</h3>
+    <div class="form-group">
+     <select class="form-control" name="" id="" [(ngModel)]="fieldName" (change)="getSortedData()">
+       <option value="full_name">FullName</option>
+       <option value="address">Address</option>
+       <option value="age">Age</option>
+       <option value="gender">Gender</option>
+       <option value="mobile_no">Mobile</option>
+       <option value="bank_id">BankId</option>
+       <option value="occupation">Occupation</option>
+       <option value="pan_no">PanNo</option>
+      </select>
+  </div>
+  </div>
+
+  <div class="row">
+   <h3 class="col-md-2">Search By</h3>
+   <div class="form-group">
+    <select class="form-control" name="" id="" [(ngModel)]="fieldName" (change)="getSortedData()">
+      <option value="full_name">FullName</option>
+      <option value="address">Address</option>
+      <option value="age">Age</option>
+      <option value="gender">Gender</option>
+      <option value="mobile_no">Mobile</option>
+      <option value="bank_id">BankId</option>
+      <option value="occupation">Occupation</option>
+      <option value="pan_no">PanNo</option>
+   </select>
+ </div>
+ </div>
+  <table class="table table-sm table-dark">
+    <tr>
+      <th>Full Name</th>
+      <th>Address</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Mobile</th>
+      <th>BankId</th>
+      <th>Occupation</th>
+      <th>PanNo</th>
+
+
+    </tr>
+    <tr *ngFor="let customer of customerDetails | customerSearch: searchValue: searchBy">
+      <td>{{customer.full_name}}</td>
+      <td>{{customer.address}}</td>
+      <td>{{customer.age}}</td>
+      <td>{{customer.gender}}</td>
+      <td>{{customer.mobile_no}}</td>
+      <td>{{customer.bank_id}}</td>
+      <td>{{customer.occupation}}</td>
+      <td>{{customer.pan_no}}</td>
+
+    </tr>
+  </table>
+  <mat-paginator [length]="totalItems"
+             [pageSize]="itemsPerPage"
+             [pageSizeOptions]="[5, 10, 15, 20]"
+             (page) = "getNextPageItems($event)"
+             >
+</mat-paginator>
+
+
+</div>

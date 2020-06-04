@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<div class="borders">
+<div class="style"> 
+  <h2 class="pt-3 pb-3" >Loan Process</h2>
+ 
+  <button class="butn-style">Loan Process</button>
+  <form>
+   
+    <div class="form-group">
+      <label for="exampleFormControlSelect1"  style="margin-right: 27%">Loan Type</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Home Loan</option>
+        <option>Personal Loan</option>
+        <option>Vehicle Loan</option>
+        <option>Business Loan</option>
+        <option>Education Loan</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="loanid" style="margin-right: 28%">Loan Id</label>
+      <input required ngModel type="email" name="loanid" class="form-control" id="loanid" aria-describedby="emailHelp" #loanid="ngModel" 
+      placeholder="Enter loanid" minlength="3">
+      <div class="alert alert-danger" *ngIf="loanid.touched && !loanid.valid">
+        <div *ngIf="loanid.errors.required">loanid is required</div>
+        <div *ngIf="loanid.errors.minlength">loanid must be at least 3 characters long</div>
+     </div>
+    </div>
+   
+    <div class="form-group">
+      <label for="BankId" style="margin-right: 28%">Bank Id</label>
+      <input required ngModel type="email" name="BankId" class="form-control" id="BankId" aria-describedby="emailHelp" #BankId="ngModel" 
+      placeholder="Enter BankId" minlength="3">
+      <div class="alert alert-danger" *ngIf="BankId.touched && !BankId.valid">
+        <div *ngIf="BankId.errors.required">BankId is required</div>
+        <div *ngIf="BankId.errors.minlength">BankId must be at least 3 characters long</div>
+     </div>
+    </div>
+    <div class="form-group">
+      <label for="period" style="margin-right: 28%">Period</label>
+      <input required ngModel #period="ngModel" name="period" type="text" class="form-control" id="period"
+      minlength="3" placeholder="Enter Period">
+      <div class="alert alert-danger" *ngIf="period.touched && !period.valid">
+        <div *ngIf="period.errors.required">Period is required</div>
+        <div *ngIf="period.errors.minlength">Period must be at least 3 characters long</div>
+     </div>
+    </div>
+    <div class="form-group">
+        <label for="interest" style="margin-right: 25%">Interest rates</label>
+        <input required #interest="ngModel" ngModel type="text" class="form-control" name="interest"
+        minlength="3" id="interest" placeholder="Enter Interest rates">
+        <div class="alert alert-danger" *ngIf="interest.touched && !interest.valid">
+          <div *ngIf="interest.errors.required">interest is required</div>
+          <div *ngIf="interest.errors.minlength">interest must be at least 3 characters long</div>
+       </div>
+      </div>
+      <div class="form-group">
+        <label for="userid" style="margin-right: 28%">User Id</label>
+        <input required ngModel type="email" name="userid" class="form-control" id="userid" aria-describedby="emailHelp" #userid="ngModel" 
+        placeholder="Enter userid" minlength="3">
+        <div class="alert alert-danger" *ngIf="userid.touched && !userid.valid">
+          <div *ngIf="userid.errors.required">userid is required</div>
+          <div *ngIf="userid.errors.minlength">loanid must be at least 3 characters long</div>
+       </div>
+      </div>
+      <div class="form-group">
+        <label for="start" style="margin-right: 28%">Start Date</label>
+        <input required ngModel type="date" name="start" class="form-control" id="start" aria-describedby="emailHelp" #start="ngModel" 
+        placeholder="Enter start" minlength="3">
+        <div class="alert alert-danger" *ngIf="start.touched && !start.valid">
+          <div *ngIf="start.errors.required">start date is required</div>
+          <div *ngIf="start.errors.minlength">start must be at least 3 characters long</div>
+       </div>
+      </div>
+      <div class="form-group">
+        <label for="end" style="margin-right: 28%">End Date</label>
+        <input required ngModel type="date" name="end" class="form-control" id="end" aria-describedby="emailHelp" #end="ngModel" 
+        placeholder="Enter end" minlength="3">
+        <div class="alert alert-danger" *ngIf="end.touched && !end.valid">
+          <div *ngIf="end.errors.required">End Date is required</div>
+          <div *ngIf="end.errors.minlength">end must be at least 3 characters long</div>
+       </div>
+      </div>
+   
+   
+
+      
+      
+      <button type="submit" class="btn btn-primary mb-3">Submit</button>
+    </form>
+ </div> 
+</div>

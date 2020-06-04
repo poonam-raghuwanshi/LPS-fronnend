@@ -1,0 +1,105 @@
+<div class="col-md-8 offset-2 mt-5">
+  <input type="text"
+    class="form-control mb-3" placeholder="Search here..." [(ngModel)]="searchValue">
+
+  <div class="row">
+    <h3 class="col-md-2">Sort By</h3>
+    <div class="form-group">
+     <select class="form-control" name="" id="" [(ngModel)]="fieldName" (change)="getSortedData()">
+       <option value="loanId">LoanId</option>
+       <option value="userId">UserId</option>
+       <option value="loanType">LoanType</option>
+       <option value="interestRate">InterestRate</option>
+       <option value="amount">Amount</option>
+       <option value="applicantName">ApplicantName</option>
+       <option value="age">Age</option>
+       <option value="mobileNo">Mobile</option>
+       <option value="email">email</option>
+       <option value="occupation">Occupation</option>
+       <option value="salary">Salary</option>
+       <option value="panNo">PanNo</option>
+       <option value="gender">Gender</option>
+       <option value="address">Address</option>
+       <option value="period">Period</option>
+       <option value="status">Status</option>
+       <option value="bankId">BankId</option>
+    </select>
+  </div>
+  </div>
+
+  <div class="row">
+   <h3 class="col-md-2">Search By</h3>
+   <div class="form-group">
+    <select class="form-control" name="" id="" [(ngModel)]="searchBy" (change)="getSortedData()">
+      <option value="loanId">LoanId</option>
+      <option value="userId">UserId</option>
+      <option value="loanType">LoanType</option>
+      <option value="interestRate">InterestRate</option>
+      <option value="amount">Amount</option>
+      <option value="applicantName">ApplicantName</option>
+      <option value="age">Age</option>
+      <option value="mobileNo">Mobile</option>
+      <option value="email">email</option>
+      <option value="occupation">Occupation</option>
+      <option value="salary">Salary</option>
+      <option value="panNo">PanNo</option>
+      <option value="gender">Gender</option>
+      <option value="address">Address</option>
+      <option value="period">Period</option>
+      <option value="status">Status</option>
+      <option value="bankId">BankId</option>
+</select>
+ </div>
+ </div>
+  <table class="table table-sm table-dark">
+    <tr>
+      <th>Loan Id</th>
+      <th>User Id</th>
+      <th>Loan Type</th>
+      <th>InterestRate</th>
+      <th>Amount</th>
+      <th>ApplicantName</th>
+      <th>Age</th>
+      <th>Mobile</th>
+      <th>Email</th>
+      <th>Occupation</th>
+      <th>Salary</th>
+      <th>PanNo</th>
+      <th>Gender</th>
+      <th>Address></th>
+      <th>Period</th>
+      <th>Status</th>
+      <th>BankId</th>
+
+    </tr>
+    <tr *ngFor="let loan of loansDetails | loanSearch: searchValue: searchBy">
+      <td>{{loan.loanId}}</td>
+      <td>{{loan.userId}}</td>
+      <td>{{loan.loanType}}</td>
+      <td>{{loan.interestRate}}</td>
+      <td>{{loan.amount}}</td>
+      <td>{{loan.applicantName}}</td>
+      <td>{{loan.age}}</td>
+      <td>{{loan.mobileNo}}</td>
+      <td>{{loan.email}}</td>
+      <td>{{loan.occupation}}</td>
+      <td>{{loan.salary}}</td>
+      <td>{{loan.panNo}}</td>
+      <td>{{loan.gender}}</td>
+      <td>{{loan.address}}</td>
+      <td>{{loan.period}}</td>
+      <td>{{loan.status}}</td>
+      <td>{{loan.bankId}}</td>
+
+
+    </tr>
+  </table>
+  <mat-paginator [length]="totalItems"
+             [pageSize]="itemsPerPage"
+             [pageSizeOptions]="[5, 10, 15, 20]"
+             (page) = "getNextPageItems($event)"
+             >
+</mat-paginator>
+
+
+</div>

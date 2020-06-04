@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="addCustomerForm" class="col-6 offset-3 mt-3  card" style="padding: 20px;">
+    <form style="background-color: whitesmoke;" #addCustomerForm="ngForm" (ngSubmit)="getAddCustomerData(addCustomerForm)">
+      <br>
+      <div class="card body" style="padding: 20px;">
+        <h1 class="h1 text-center" style="background-color: #fff;">Add Customer</h1>
+        <div class="form-group">
+          <label for="full_name">Full name</label>
+          <input type="text" ngModel class="form-control" name="full_name" id="full_name" aria-describedby="emailHelpId"
+            placeholder="enter full name">
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" ngModel class="form-control" name="address" id="address"
+            aria-describedby="emailHelpId" placeholder="enter address">
+        </div>
+        <div class="form-group">
+          <label for="age">Age </label>
+          <input type="number" ngModel class="form-control" name="age" id="age" aria-describedby="emailHelpId"
+            placeholder="enter age">
+        </div>
+        <div class="form-group">
+          <label for="mobile_no">Mobile No.</label>
+          <input type="number" ngModel class="form-control" name="mobile_no" id="mobile_no"
+            aria-describedby="emailHelpId" placeholder="enter mobile nummber">
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender </label>
+          <input type="text" ngModel class="form-control" name="gender" id="gender"
+          aria-describedby="emailHelpId" placeholder="enter gender">
+        </div>
+        <div class="form-group">
+          <label for="occupation">Occupation </label>
+          <input type="text" ngModel class="form-control" name="occupation" id="occupation"
+          aria-describedby="emailHelpId" placeholder="enter occupation">
+        </div>
+        <div class="form-group">
+          <label for="pan_no">Pan No.</label>
+          <input type="text" ngModel class="form-control" name="pan_no" id="pan_no"
+            aria-describedby="emailHelpId" placeholder="enter pan number">
+        </div>
+        <div class="form-group">
+          <label for="bank_id">Bank Id</label>
+          <input type="number" ngModel class="form-control" name="bank_id" id="bank_id"
+            aria-describedby="emailHelpId" placeholder="enter bank id">
+        </div>
+       
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+

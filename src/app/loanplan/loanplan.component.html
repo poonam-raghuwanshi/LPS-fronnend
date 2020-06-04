@@ -1,0 +1,56 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body> -->
+
+  <div id="addLoanPlanForm" class="col-6 offset-3 mt-3  card" style="padding: 20px;">
+    <form style="background-color: whitesmoke;" #addLoanPlanForm="ngForm" (ngSubmit)="getAddLoanPlanData(addLoanPlanForm)">
+      <br>
+      <div class="card body" style="padding: 20px;">
+        <h1 class="h1 text-center" style="background-color: #fff;">Add LoanPlan</h1>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1"  style="margin-right: 27%">Loan Type</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>House Loan</option>
+            <option>Personal Loan</option>
+            <option>Vehicle Loan</option>
+            <option>Business Loan</option>
+            <option>Study Loan</option>
+            <option>Car Loan</option>
+            <option>Laptop Loan</option>
+          </select>
+            
+        </div>
+        <div class="form-group">
+          <label for="amount">Amount</label>
+          <input type="number" ngModel class="form-control" name="amount" id="amount"
+            aria-describedby="emailHelpId" #amountValid = "ngModel" placeholder="enter amount" required pattern="^[0-9]{4,7}$">
+        </div>
+        <div *ngIf = "amountValid.invalid && amountValid.touched"> 
+          <p class = "text-danger" *ngIf = "amountValid.errors.required">*this field is required</p>
+          <p class="text-danger" *ngIf = "amountValid.errors.pattern">*please enter amount from 1000 to 9999999</p>
+        </div>
+        <div class="form-group">
+          <label for="interest_rate">Interest Rate </label>
+          <input type="number" ngModel class="form-control" name="interest_rate" id="interest_rate" aria-describedby="emailHelpId"
+            placeholder="enter interest rate">
+        </div>
+        <div class="form-group">
+          <label for="period">Period</label>
+          <input type="number" ngModel class="form-control" name="period" id="period"
+            aria-describedby="emailHelpId" placeholder="enter period">
+        </div>
+         
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+      </div>
+    </form>
+  </div>
+<!-- </body>
+</html> -->
+

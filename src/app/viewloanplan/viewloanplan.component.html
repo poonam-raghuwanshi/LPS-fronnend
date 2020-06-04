@@ -1,0 +1,51 @@
+<div class="col-md-8 offset-2 mt-5">
+  <input type="text"
+    class="form-control mb-3" placeholder="Search here..." [(ngModel)]="searchValue">
+
+  <div class="row">
+    <h3 class="col-md-2">Sort By</h3>
+    <div class="form-group">
+     <select class="form-control" name="" id="" [(ngModel)]="fieldName" (change)="getSortedData()">
+       <option value="loantype">loanType</option>
+       <option value="amount">amount</option>
+       <option value="interest_rate">rate</option>
+       <option value="period">period</option>
+     </select>
+  </div>
+  </div>
+
+  <div class="row">
+   <h3 class="col-md-2">Search By</h3>
+   <div class="form-group">
+    <select class="form-control" name="" id="" [(ngModel)]="searchBy" (change)="getSortedData()">
+      <option value="loantype">loanType</option>
+      <option value="amount">amount</option>
+      <option value="interest_rate">rate</option>
+      <option value="period">period</option>
+
+    </select>
+ </div>
+ </div>
+  <table class="table table-sm table-dark">
+    <tr>
+      <th>Loan Type</th>
+      <th>Amount</th>
+      <th>Rate</th>
+      <th>Period</th>
+    </tr>
+    <tr *ngFor="let loanplan of loanplanDetails | loanplanSearch: searchValue: searchBy">
+      <td>{{loanplan.loantype}}</td>
+      <td>{{loanplan.amount}}</td>
+      <td>{{loanplan.interest_rate}}</td>
+      <td>{{loanplan.period}}</td>
+    </tr>
+  </table>
+  <mat-paginator [length]="totalItems"
+             [pageSize]="itemsPerPage"
+             [pageSizeOptions]="[5, 10, 15, 20]"
+             (page) = "getNextPageItems($event)"
+             >
+</mat-paginator>
+
+
+</div>

@@ -1,0 +1,46 @@
+ <div class="col-md-8 offset-2 mt-5">
+   <input type="text"
+     class="form-control mb-3" placeholder="Search here..." [(ngModel)]="searchValue">
+
+   <div class="row">
+     <h3 class="col-md-2">Sort By</h3>
+     <div class="form-group">
+      <select class="form-control" name="" id="" [(ngModel)]="fieldName" (change)="getSortedData()">
+        <option value="fullName">fullName</option>
+        <option value="email">email</option>
+        <option value="role">role</option>
+      </select>
+   </div>
+   </div>
+
+   <div class="row">
+    <h3 class="col-md-2">Search By</h3>
+    <div class="form-group">
+     <select class="form-control" name="" id="" [(ngModel)]="searchBy" (change)="getSortedData()">
+       <option value="fullName">fullName</option>
+       <option value="email">email</option>
+       <option value="role">role</option>
+     </select>
+  </div>
+  </div>
+   <table class="table table-sm table-dark">
+     <tr>
+       <th>Full Name</th>
+       <th>Email</th>
+       <th>Role</th>
+     </tr>
+     <tr *ngFor="let user of userDetails | userSearch: searchValue: searchBy">
+       <td>{{user.fullName}}</td>
+       <td>{{user.email}}</td>
+       <td>{{user.role}}</td>
+     </tr>
+   </table>
+   <mat-paginator [length]="totalItems"
+              [pageSize]="itemsPerPage"
+              [pageSizeOptions]="[5, 10, 15, 20]"
+              (page) = "getNextPageItems($event)"
+              >
+</mat-paginator>
+
+
+ </div>

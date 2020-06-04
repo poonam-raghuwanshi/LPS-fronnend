@@ -1,0 +1,69 @@
+<div class="col-md-8 offset-2 mt-5">
+  <input type="text"
+    class="form-control mb-3" placeholder="Search here..." [(ngModel)]="searchValue">
+
+  <div class="row">
+    <h3 class="col-md-2">Sort By</h3>
+    <div class="form-group">
+     <select class="form-control" name="" id="" [(ngModel)]="fieldName" (change)="getSortedData()">
+      <option value="loanId">LoanId</option>
+      <option value="userId">UserId</option>
+      <option value="loanType">LoanType</option>
+      <option value="interestRate">InterestRate</option>
+      <option value="amount">Amount</option>
+      <option value="yearlyInstallment">Installment</option>
+      <option value="period">Period</option>
+      <option value="bankId">BankId</option>
+    </select>
+  </div>
+  </div>
+
+  <div class="row">
+   <h3 class="col-md-2">Search By</h3>
+   <div class="form-group">
+    <select class="form-control" name="" id="" [(ngModel)]="searchBy" (change)="getSortedData()">
+      <option value="loanId">LoanId</option>
+      <option value="userId">UserId</option>
+      <option value="loanType">LoanType</option>
+      <option value="interestRate">InterestRate</option>
+      <option value="amount">Amount</option>
+      <option value="yearlyInstallment">Installment</option>
+      <option value="period">Period</option>
+      <option value="bankId">BankId</option>
+</select>
+ </div>
+ </div>
+  <table class="table table-sm table-dark">
+    <tr>
+      <th>Loan Id</th>
+      <th>User Id</th>
+      <th>Loan Type</th>
+      <th>InterestRate</th>
+      <th>Amount</th>
+      <th>Installment</th>
+      <th>Period</th>
+      <th>BankId</th>
+
+    </tr>
+    <tr *ngFor="let loanprocess of loanprocessDetails | loanprocessSearch: searchValue: searchBy">
+      <td>{{loanprocess.loanId}}</td>
+      <td>{{loanprocess.userId}}</td>
+      <td>{{loanprocess.loanType}}</td>
+      <td>{{loanprocess.interestRate}}</td>
+      <td>{{loanprocess.amount}}</td>
+      <td>{{loanprocess.yearlyInstallment}}</td>
+      <td>{{loanprocess.period}}</td>
+      <td>{{loanprocess.bankId}}</td>
+
+
+    </tr>
+  </table>
+  <mat-paginator [length]="totalItems"
+             [pageSize]="itemsPerPage"
+             [pageSizeOptions]="[5, 10, 15, 20]"
+             (page) = "getNextPageItems($event)"
+             >
+</mat-paginator>
+
+
+</div>

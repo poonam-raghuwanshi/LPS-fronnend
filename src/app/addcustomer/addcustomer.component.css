@@ -1,0 +1,15 @@
+.style{
+    text-align: center;
+}
+.butn-style{
+    padding: 15px 113px;
+    font-size: 20px;
+    margin-bottom: 3%;
+}
+.form-control{
+    width: 36%!important;
+    display: inline-flex!important;
+}
+label{
+    display:block!important;
+}
